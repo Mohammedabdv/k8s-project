@@ -24,8 +24,12 @@ const paymentBRoutes = require('./routes/braintreepayment');
 
 //----MOngoDB Connection----
 mongoose.connect(
-    process.env.DATABASE,
-    { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
+    process.env.DATABASE, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+}
 ).then(() => {
     console.log('Connected to MongoDB');
 }).catch(() => {
@@ -47,7 +51,7 @@ app.use('/api', stripeRoutes);
 app.use('/api', paymentBRoutes);
 
 //----Port----
-const port = process.env.PORT || 8000;
+const port = 8000;
 
 //----Starting a server----
 app.listen(port, () => {

@@ -18,7 +18,6 @@ const Cart = () => {
     const loadAllProducts = () => {
         return (
             <div className="row text-center">
-
                 <div className="row">
                     <h2 className="col-12 text-white text-center">All Products in your cart:</h2>
                     {products.map((product, index) => {
@@ -51,7 +50,7 @@ const Cart = () => {
         <Base title="Cart Page" description="Explore other products or checkout now">
             <div className="row text-center">
                 <div className="col-6">
-                    {products.length > 0 ? loadAllProducts() : (
+                    {products && products.length > 0 ? loadAllProducts() : (
                         <h3 className="text-white">No products in cart</h3>
                     )}
                 </div>
