@@ -50,13 +50,14 @@ const Cart = () => {
         <Base title="Cart Page" description="Explore other products or checkout now">
             <div className="row text-center">
                 <div className="col-6">
-                    {products && products.length > 0 ? loadAllProducts() : (
+                    {(products && products.length > 0) ? loadAllProducts() : (
                         <h3 className="text-white">No products in cart</h3>
                     )}
                 </div>
                 <div className="col-6">
                     {/* <StripeCheckout products={products} setReload={setReload} /> */}
-                    <Paymentb products={products} setReload={setReload} />
+                    {(products && products.length > 0) ? (<Paymentb products={products} setReload={setReload} />) :
+                        (<h3 className="text-white">No bill as cart is empty</h3>)}
                 </div>
             </div>
         </Base >

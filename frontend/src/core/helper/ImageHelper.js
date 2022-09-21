@@ -9,7 +9,6 @@ const ImageHelper = ({ product }) => {
         <div className="rounded border border-light p-2">
             <img
                 src={imageurl}
-                alt="photo"
                 style={{ maxHeight: "100%", maxWidth: "100%", objectFit: "cover" }}
                 className="mb-3 rounded"
             />
