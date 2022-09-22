@@ -56,8 +56,7 @@ const Cart = () => {
                 </div>
                 <div className="col-6">
                     {/* <StripeCheckout products={products} setReload={setReload} /> */}
-                    {(products && products.length > 0) ? (<Paymentb products={products} setReload={setReload} />) :
-                        (<h3 className="text-white">No bill as cart is empty</h3>)}
+                    <Paymentb products={products} setReload={setReload} />
                 </div>
             </div>
         </Base >

@@ -16,14 +16,14 @@ const Base = ({
                 <p className="lead">{description}</p>
             </div>
             <div className={className}>{children}</div>
-            <footer className="footer bg-dark mt-auto">
+            <footer className="row footer bg-dark mt-5">
                 <div className="container-fluid bg-success text-white text-center py-3">
                     <h4>If you got any questions, feel free to reach out!</h4>
                     <button className="btn btn-warning rounded btn-lg">Contact Us</button>
                 </div>
                 <div className="container">
                 </div>
-                <div className="container d-flex justify-content-center">
+                <div className="container">
                     <span className="text-muted ">Created @ 2022 by <span className="text-white">Udatta Mukherjee</span></span>
                 </div>
             </footer>

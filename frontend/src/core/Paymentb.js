@@ -33,7 +33,7 @@ const Paymentb = ({ products, setReload = f => f, reload = undefined }) => {
     const showbtdropIn = () => {
         return (
             <div>
-                {info.clientToken !== null && products.length > 0 ? (
+                {products && info.clientToken !== null && products.length > 0 ? (
                     <div>
                         <DropIn
                             options={{ authorization: info.clientToken }}
@@ -85,6 +85,9 @@ const Paymentb = ({ products, setReload = f => f, reload = undefined }) => {
     };
 
     const getAmount = () => {
+        if (!products) {
+            return 0;
+        }
         let amount = 0;
         products.map(p => {
             amount = amount + p.price;
@@ -99,5 +102,4 @@ const Paymentb = ({ products, setReload = f => f, reload = undefined }) => {
         </div>
     );
 };
-
 export default Paymentb;

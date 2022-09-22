@@ -2,7 +2,6 @@ const User = require('../models/user');
 const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const expressJwt = require('express-jwt');
-const SECRET = 'LorenIpsumDolorSitAmet'
 
 //----Documentation----
 //https://www.npmjs.com/package/express-validator
@@ -20,9 +19,16 @@ exports.signup = (req, res) => {
             error: errors.array()[0].msg
         });
     }
-
     //create new user
     const user = new User(req.body);
+    //Find whether user already exists
+    User.findOne({ email: user.email }, (err, userExists) => {
+        if (err || userExists) {
+            return res.status(400).json({
+                error: "User Already Exists"
+            });
+        }
+    });
     user.save((err, user) => {
         //if error
         if (err) {
@@ -85,7 +91,7 @@ exports.signout = (req, res) => {
 //Custom middleware
 //Protected routes
 exports.isSignedIn = expressJwt({
-    secret: SECRET,
+    secret: process.env.SECRET,
     userProperty: "auth"
 });
 //isAuthenticated

@@ -43,7 +43,7 @@ const Signup = () => {
                 }
             })
             .catch(() => {
-                console.log("Signin request failed");
+                console.log("Signup request failed");
             });
     };
 
@@ -76,30 +76,30 @@ const Signup = () => {
 
     // Success Message
     const successMessage = () => {
-        return (
-            <div className="col-md-6 offset-sm-3  btn-lg mt-5 text-left">
-                <div
-                    className="alert alert-success"
-                    style={
-                        { display: success ? "" : "none" }}
-                >New account was created successfully.
-                    Please<Link to="/signin">Login Here</Link>
+        if (success) {
+            return (
+                <div className="col-md-6 offset-sm-3  btn-lg mt-5 text-left">
+                    <div
+                        className="alert alert-success"
+                    >New account was created successfully.
+                        Please<Link to="/signin">Login Here</Link>
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        }
     };
 
     // Error Message
     const errorMessage = () => {
-        return (
-            <div className="col-md-6 mt-5 btn-lg offset-sm-3 text-left">
-                <div className="alert alert-danger" style={{
-                    display: error ? "" : "none"
-                }}>
-                    {error}
+        if (error) {
+            return (
+                <div className="col-md-6 mt-5 btn-lg offset-sm-3 text-left">
+                    <div className="alert alert-danger">
+                        {error}
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        }
     };
 
     // Return
