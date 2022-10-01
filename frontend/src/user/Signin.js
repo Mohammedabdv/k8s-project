@@ -71,7 +71,7 @@ const Signin = () => {
                         <div className="form-group">
                             <label className="text-light">Email</label>
                             <input onChange={handleChange("email")}
-                                vakue={email} className="form-control" type="email" placeholder="elliotalderson@protonmail.ch" />
+                                vakue={email} className="form-control" type="email" placeholder="For eg. elliotalderson@protonmail.ch" />
                         </div>
                         <div className="form-group">
                             <label className="text-light">Password</label>

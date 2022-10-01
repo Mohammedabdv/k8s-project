@@ -55,11 +55,11 @@ const Signup = () => {
                     <form>
                         <div className="form-group">
                             <label className="text-light">Name</label>
-                            <input className="form-control rounded-1" type="text" placeholder="Elliot Alderson" onChange={handleChange("name")} value={name} />
+                            <input className="form-control rounded-1" type="text" placeholder="For eg. Elliot Alderson" onChange={handleChange("name")} value={name} />
                         </div>
                         <div className="form-group">
                             <label className="text-light">Email</label>
-                            <input className="form-control rounded-1" type="email" placeholder=" elliotalderson@protonmail.ch" onChange={handleChange("email")} value={email} />
+                            <input className="form-control rounded-1" type="email" placeholder="For eg. elliotalderson@protonmail.ch" onChange={handleChange("email")} value={email} />
                         </div>
                         <div className="form-group">
                             <label className="text-light">Password</label>
