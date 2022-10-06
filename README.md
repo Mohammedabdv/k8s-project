@@ -53,7 +53,7 @@ Fashionista is a fullstack e-commerce application built with React, Node.js, Exp
 The structure of the project is as follows:
 
 ```
-fashionista
+Fashionista
 ├── backend
 ├── frontend
 ```
