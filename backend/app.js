@@ -32,7 +32,8 @@ mongoose.connect(
 }
 ).then(() => {
     console.log('Connected to MongoDB');
-}).catch(() => {
+}).catch((err) => {
+    console.log(err);
     console.log('Failed to connect to MongoDB');
 });
 
@@ -51,7 +52,7 @@ app.use('/api', stripeRoutes);
 app.use('/api', paymentBRoutes);
 
 //----Port----
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 //----Starting a server----
 app.listen(port, () => {

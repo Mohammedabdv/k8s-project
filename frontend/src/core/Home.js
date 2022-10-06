@@ -28,10 +28,8 @@ const Home = () => {
     return (
         <Base title="Fashionista" description="Choose whatever your heart desires!">
             <div className="row text-center">
-                < h1 className="col-12 text-white text-center py-3" > All Products:</h1 >
-
+                < h1 className="col-12 text-white text-center pb-3" > All Products:</h1 >
                 <div className="row">
-
                     {products.map((product, index) => {
                         return (
                             <div key={index} className="col-4 mb-4">

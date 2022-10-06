@@ -20,19 +20,23 @@ const Cart = () => {
             <div className="row text-center">
                 <div className="row">
                     <h2 className="col-12 text-white text-center">All Products in your cart:</h2>
+
                     {products.map((product, index) => {
                         return (
-                            <Card
-                                key={index}
-                                product={product}
-                                removeFromCart={true}
-                                addtoCart={false}
-                                setReload={setReload}
-                                reload={reload}
-                            />
+                            <div className="col-6">
+                                <Card
+                                    key={index}
+                                    product={product}
+                                    removeFromCart={true}
+                                    addtoCart={false}
+                                    setReload={setReload}
+                                    reload={reload}
+                                />
+                            </div>
                         );
                     }
                     )}
+
                 </div>
             </div >
         )

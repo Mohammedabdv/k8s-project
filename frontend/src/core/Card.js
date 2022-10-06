@@ -58,7 +58,7 @@ const Card = ({
     };
 
     return (
-        <div className="card text-white bg-dark border ">
+        <div className="card text-white bg-dark border">
             <div className="card-header lead font-weight-bold ">{productTitle}</div>
             <div className="card-body">
                 {redirectUser(redirect)}
