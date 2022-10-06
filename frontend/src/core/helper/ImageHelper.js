@@ -6,10 +6,10 @@ const ImageHelper = ({ product }) => {
         ? `${API}/product/photo/${product._id}`
         : `https://i.stack.imgur.com/6M513.png`;
     return (
-        <div className="rounded border border-light p-2">
+        <div className="rounded border border-light pt-2">
             <img
                 src={imageurl}
-                style={{ maxHeight: "100%", maxWidth: "100%", objectFit: "cover" }}
+                style={{ maxHeight: "70%", maxWidth: "70%", objectFit: "cover" }}
                 className="mb-3 rounded"
             />
         </div>

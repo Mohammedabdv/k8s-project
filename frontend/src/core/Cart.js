@@ -58,7 +58,7 @@ const Cart = () => {
                         <h3 className="text-white">No products in cart</h3>
                     )}
                 </div>
-                <div className="col-6">
+                <div className="col-6 d-flex justify-content-center align-items-center">
                     {/* <StripeCheckout products={products} setReload={setReload} /> */}
                     <Paymentb products={products} setReload={setReload} />
                 </div>

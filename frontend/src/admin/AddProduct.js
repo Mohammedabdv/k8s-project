@@ -158,7 +158,6 @@ const AddProduct = () => {
 
     return (
         <Base title="Add a new product" description="Add new products here" className="container bg-info p-4 rounded">
-
             <div className="row bg-white rounded rounded">
                 <div className="col-md-8 offset-md-2">
                     {successMessage()}

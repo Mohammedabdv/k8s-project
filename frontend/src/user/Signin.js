@@ -65,7 +65,7 @@ const Signin = () => {
     //Signin Form
     const signInForm = () => {
         return (
-            <div className="row">
+            <div className="row mb-5">
                 <div className="col-md-6 offset-sm-3 text-left">
                     <form>
                         <div className="form-group">

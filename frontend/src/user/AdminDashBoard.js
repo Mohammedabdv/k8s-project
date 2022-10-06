@@ -64,7 +64,7 @@ const AdminDashBoard = () => {
     };
 
     return (
-        <Base title="Welcome to the admin area" description="This is where all the things happen!" className="container bg-success p-4 rounded">
+        <Base title="Welcome to the admin area" description="This is where all the things are managed!" className="container bg-success p-4 rounded">
             <div className="row">
                 <div className="col-8">
                     {adminLeftSide()}
