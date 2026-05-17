@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: fashionista
+  labels:
+    app: fashionista-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fashionista-backend
+  template:
+    metadata:
+      labels:
+        app: fashionista-backend 
+    spec:
+      containers:
+        - name: backend
+          image: mohammedabdv/fashionista-backend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          env:
+            - name: PORT
+              value: "8000"
+            - name: DATABASE
+              value: "mongodb://mongodb:27017/fashionista"
+            - name: SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: fashionista-secrets
+                  key: jwt-secret
+            - name: STRIPE_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: fashionista-secrets
+                  key: stripe-secret-key
+            - name: BRAINTREE_MERCHANT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: fashionista-secrets
+                  key: braintree-merchant-id
+            - name: BRAINTREE_PUBLIC_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: fashionista-secrets
+                  key: braintree-public-key
+            - name: BRAINTREE_PRIVATE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: fashionista-secrets
+                  key: braintree-private-key
+          readinessProbe:
+            tcpSocket:
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: 8000
+            initialDelaySeconds: 20
+            periodSeconds: 30
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "300m"
+ 
